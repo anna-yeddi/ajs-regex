@@ -7,6 +7,10 @@
     "coverage": "jest --coverage",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
+    "preshow:coverage": "npm run coverage",
+    "preshow:dist": "npm run build",
+    "show:coverage": "live-server coverage/lcov-report",
+    "show:dist": "live-server dist",
     "start": "webpack serve --mode development",
     "test": "jest"
   },

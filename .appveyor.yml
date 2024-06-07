@@ -1,0 +1,19 @@
+environment:
+  nodejs_version: "18"
+
+branches:
+  only:
+    - main  # git branch
+
+cache: node_modules
+
+install:
+  - npm install
+
+build: off  # disable the built-in build system from appveyor
+
+build_script:
+  - npm run build
+
+test_script:
+  - npm run lint && npm test
