@@ -15,6 +15,7 @@ test('should call loadUser once', () => {
   expect(httpGet).toHaveBeenCalledWith('http://server:8080/users/1');
 });
 
-test('should call saveUser once', () => {
+test('should throw while calling saveUser', () => {
   expect(() => saveUser({})).toThrow('Unimplemented');
+  expect(() => saveUser()).toThrow(Error);
 });
