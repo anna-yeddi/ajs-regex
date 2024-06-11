@@ -7,10 +7,18 @@ beforeEach(() => {
   jest.resetAllMocks();
 });
 
-test("should call loadUser once", () => {
-  httpGet.mockReturnValue(JSON.stringify({}));
+test("should call fetchData once while calling getLevel", () => {
+  // fetchData.mockReturnValue(JSON.stringify({}));
+  const mockFetch = jest.fn().mockResolvedValue((this.status = "ok"));
 
-  const response = loadUser(1);
-  expect(response).toEqual({});
-  expect(httpGet).toHaveBeenCalledWith("http://server:8080/users/1");
+  const response = getLevel(1);
+  expect(response).toEqual(`The level information is currently unavailable`);
+  expect(mockFetch).toHaveBeenCalledWith("https://server/user/1");
 });
+
+// test("should call fetchData once while calling getLevel", () => {
+//   fetchData.mockReturnValue(JSON.stringify({}));
+
+//   const response = getLevel([1].status);
+//   expect(response).toEqual(`Your current level is: `);
+// });
