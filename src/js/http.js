@@ -7,5 +7,5 @@ export function httpPost(url) {
 }
 
 export default function fetchData(url) {
-  throw new Error('Mock this!');
+  throw new Error(`Mock this for ${url}`);
 }
