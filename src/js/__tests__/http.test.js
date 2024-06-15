@@ -18,5 +18,5 @@ test("should throw while calling fetchData", () => {
   const url = "test.com";
 
   expect(() => fetchData(url)).toThrow(Error);
-  expect(() => fetchData("url")).toThrow("Mock this!");
+  expect(() => fetchData("url")).toThrow("Mock this for url");
 });
