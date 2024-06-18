@@ -74,4 +74,31 @@ describe("character", () => {
       );
     });
   });
+
+  describe("damage", () => {
+    const expectedDown = {
+      name: "Test",
+      type: "Bowman",
+      health: 93,
+      level: 1,
+      attack: 25,
+      defense: 25,
+    };
+
+    it("should be able to access the damage", () => {
+      // By default, this.health = 100;
+      const bowman = new Character("Test", "Bowman");
+      bowman.attack = 25;
+      bowman.defense = 25;
+
+      expect(bowman.damage(10)).toEqual(expectedDown);
+    });
+
+    it("should throw an error when trying to damage a dead character", () => {
+      const bowman = new Character("Test", "Bowman");
+      bowman.health = -10;
+
+      expect(() => bowman.damage(10)).toThrow("Cannot damage a dead character");
+    });
+  });
 });
