@@ -45,4 +45,33 @@ describe("character", () => {
       "Unknown character type"
     );
   });
+
+  describe("levelUp", () => {
+    const expectedUp = {
+      name: "Test",
+      type: "Bowman",
+      health: 100,
+      level: 2,
+      attack: 30,
+      defense: 30,
+    };
+
+    it("should be able to levelUp", () => {
+      const bowman = new Character("Test", "Bowman");
+      bowman.health = 25;
+      bowman.attack = 25;
+      bowman.defense = 25;
+
+      expect(bowman.levelUp()).toEqual(expectedUp);
+    });
+
+    it("should throw an error when trying to levelUp a dead character", () => {
+      const bowman = new Character("Test", "Bowman");
+      bowman.health = 0;
+
+      expect(() => bowman.levelUp()).toThrow(
+        "Cannot level up a dead character"
+      );
+    });
+  });
 });

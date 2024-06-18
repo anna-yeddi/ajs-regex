@@ -22,4 +22,16 @@ export default class Character {
     this.attack = null;
     this.defense = null;
   }
+
+  levelUp() {
+    if (this.health === 0) {
+      throw new Error("Cannot level up a dead character");
+    }
+    this.health = 100;
+    this.level++;
+    this.attack = this.attack * 1.2;
+    this.defense = this.defense * 1.2;
+
+    return this;
+  }
 }
