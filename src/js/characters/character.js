@@ -5,20 +5,25 @@ export default class Character {
     if (typeof name !== "string") {
       throw new Error("The name should a string");
     }
+
     if (name.length < 2) {
       throw new Error("The name should be at least 2 characters long");
-    } else if (name.length > 10) {
+    }
+
+    if (name.length > 10) {
       throw new Error("The name should be no more than 10 characters long");
     }
-    this.name = name;
+
     if (!types.includes(type)) {
       throw new Error("Unknown character type");
-    } else {
-      this.type = type;
     }
+
+    this.name = name;
+    this.type = type;
 
     this.health = 100;
     this.level = 1;
+
     this.attack = null;
     this.defense = null;
   }
@@ -37,8 +42,6 @@ export default class Character {
     this.level++;
     this.attack *= 1.2;
     this.defense *= 1.2;
-
-    return this;
   }
 
   /**
@@ -54,8 +57,6 @@ export default class Character {
       this.health -= points * (1 - this.defense / 100);
       // Ensure only integers are used:
       this.health = Math.round(this.health);
-
-      return this;
     }
   }
 }
