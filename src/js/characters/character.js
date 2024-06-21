@@ -31,8 +31,6 @@ export default class Character {
   /**
    * Method to update the level of the character, increase their attack and
    * defense parameters, and refill their health.
-   *
-   * @returns {Character}
    */
   levelUp() {
     if (this.health === 0) {
@@ -50,7 +48,6 @@ export default class Character {
    * Method to update the character health parameters after it was damaged.
    *
    * @param {Number} points - the level of damage for the character
-   * @returns {Character}
    */
   damage(points) {
     if (this.health < 0) {
