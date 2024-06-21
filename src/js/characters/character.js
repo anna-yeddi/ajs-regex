@@ -44,6 +44,8 @@ export default class Character {
     this.level++;
     this.attack *= 1.2;
     this.defense *= 1.2;
+
+    return this;
   }
 
   /**
@@ -60,5 +62,7 @@ export default class Character {
     this.health -= points * (1 - this.defense / 100);
     // Ensure only integers are used:
     this.health = Math.round(this.health);
+
+    return this;
   }
 }

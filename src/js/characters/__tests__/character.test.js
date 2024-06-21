@@ -62,7 +62,7 @@ describe("character", () => {
       bowman.attack = 25;
       bowman.defense = 25;
 
-      expect(() => bowman.levelUp()).toEqual(expectedUp);
+      expect(bowman.levelUp()).toEqual(expectedUp);
     });
 
     it("should throw an error when trying to levelUp a dead character", () => {
