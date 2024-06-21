@@ -1,3 +1,3 @@
-# AJS-OOP
+# AJS-Objects-For-In
 
-[![Build status](https://ci.appveyor.com/api/projects/status/1eltx5d2ewhcy758?svg=true)](https://ci.appveyor.com/project/anna-yeddi/ajs-oop)
+[![Build status](https://ci.appveyor.com/api/projects/status/ddsbuof5b4hdrhvh/branch/main?svg=true)](https://ci.appveyor.com/project/anna-yeddi/ajs-obj-for-in/branch/main)
