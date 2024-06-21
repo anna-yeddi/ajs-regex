@@ -46,59 +46,69 @@ describe("character", () => {
     );
   });
 
-  describe("levelUp", () => {
-    const expectedUp = {
-      name: "Test",
-      type: "Bowman",
-      health: 100,
-      level: 2,
-      attack: 30,
-      defense: 30,
-    };
+  describe("class methods", () => {
+    let bowman;
 
-    it("should be able to levelUp", () => {
-      const bowman = new Character("Test", "Bowman");
-      bowman.health = 25;
-      bowman.attack = 25;
-      bowman.defense = 25;
-
-      expect(bowman.levelUp()).toEqual(expectedUp);
+    beforeEach(() => {
+      bowman = new Character("Test", "Bowman");
     });
 
-    it("should throw an error when trying to levelUp a dead character", () => {
-      const bowman = new Character("Test", "Bowman");
-      bowman.health = 0;
+    describe("levelUp", () => {
+      const expectedUp = {
+        name: "Test",
+        type: "Bowman",
+        health: 100,
+        level: 2,
+        attack: 30,
+        defense: 30,
+      };
 
-      expect(() => bowman.levelUp()).toThrow(
-        "Cannot level up a dead character"
-      );
+      it("should be able to levelUp", () => {
+        bowman.health = 25;
+        bowman.attack = 25;
+        bowman.defense = 25;
+
+        bowman.levelUp();
+
+        expect(bowman).toEqual(expectedUp);
+      });
+
+      it("should throw an error when trying to levelUp a dead character", () => {
+        bowman.health = 0;
+
+        expect(() => bowman.levelUp()).toThrow(
+          "Cannot level up a dead character"
+        );
+      });
     });
-  });
 
-  describe("damage", () => {
-    const expectedDown = {
-      name: "Test",
-      type: "Bowman",
-      health: 93,
-      level: 1,
-      attack: 25,
-      defense: 25,
-    };
+    describe("damage", () => {
+      const expectedDown = {
+        name: "Test",
+        type: "Bowman",
+        health: 93,
+        level: 1,
+        attack: 25,
+        defense: 25,
+      };
 
-    it("should be able to access the damage", () => {
-      // By default, this.health = 100;
-      const bowman = new Character("Test", "Bowman");
-      bowman.attack = 25;
-      bowman.defense = 25;
+      it("should be able to access the damage", () => {
+        // By default, this.health = 100;
+        bowman.attack = 25;
+        bowman.defense = 25;
 
-      expect(bowman.damage(10)).toEqual(expectedDown);
-    });
+        bowman.damage(10);
 
-    it("should throw an error when trying to damage a dead character", () => {
-      const bowman = new Character("Test", "Bowman");
-      bowman.health = -10;
+        expect(bowman).toEqual(expectedDown);
+      });
 
-      expect(() => bowman.damage(10)).toThrow("Cannot damage a dead character");
+      it("should throw an error when trying to damage a dead character", () => {
+        bowman.health = -10;
+
+        expect(() => bowman.damage(10)).toThrow(
+          "Cannot damage a dead character"
+        );
+      });
     });
   });
 });

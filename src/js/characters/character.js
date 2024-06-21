@@ -45,7 +45,7 @@ export default class Character {
     this.attack *= 1.2;
     this.defense *= 1.2;
 
-    return this;
+    // return this;
   }
 
   /**
@@ -63,6 +63,6 @@ export default class Character {
     // Ensure only integers are used:
     this.health = Math.round(this.health);
 
-    return this;
+    // return this;
   }
 }
