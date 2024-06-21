@@ -38,7 +38,9 @@ export default class Character {
     if (this.health === 0) {
       throw new Error("Cannot level up a dead character");
     }
+
     this.health = 100;
+
     this.level++;
     this.attack *= 1.2;
     this.defense *= 1.2;
@@ -53,10 +55,10 @@ export default class Character {
   damage(points) {
     if (this.health < 0) {
       throw new Error("Cannot damage a dead character");
-    } else {
-      this.health -= points * (1 - this.defense / 100);
-      // Ensure only integers are used:
-      this.health = Math.round(this.health);
     }
+
+    this.health -= points * (1 - this.defense / 100);
+    // Ensure only integers are used:
+    this.health = Math.round(this.health);
   }
 }
