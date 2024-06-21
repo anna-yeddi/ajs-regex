@@ -63,7 +63,7 @@ describe("character", () => {
         defense: 30,
       };
 
-      it("should be able to levelUp", () => {
+      it("should be able to levelUp the character", () => {
         bowman.health = 25;
         bowman.attack = 25;
         bowman.defense = 25;
