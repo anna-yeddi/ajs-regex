@@ -64,9 +64,10 @@ describe("character", () => {
       };
 
       it("should be able to levelUp the character", () => {
-        bowman.health = 25;
         bowman.attack = 25;
         bowman.defense = 25;
+        // By default, this.health = 100:
+        bowman.health = 25;
 
         bowman.levelUp();
 
@@ -93,7 +94,7 @@ describe("character", () => {
       };
 
       it("should be able to access the damage", () => {
-        // By default, this.health = 100;
+        // By default, this.health = 100.
         bowman.attack = 25;
         bowman.defense = 25;
 

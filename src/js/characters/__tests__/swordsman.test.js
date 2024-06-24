@@ -11,13 +11,13 @@ describe("Swordsman", () => {
   };
 
   it("should be created as an instance of the Swordsman class", () => {
-    const swordsman = new Swordsman("Test", "Swordsman");
+    const swordsman = new Swordsman("Test");
 
     expect(swordsman).toBeInstanceOf(Swordsman);
   });
 
   it("should be created with default data", () => {
-    const swordsman = new Swordsman("Test", "Swordsman");
+    const swordsman = new Swordsman("Test");
 
     expect(swordsman).toEqual(expected);
   });

@@ -11,13 +11,13 @@ describe("Daemon", () => {
   };
 
   it("should be created as an instance of the Daemon class", () => {
-    const daemon = new Daemon("Test", "Daemon");
+    const daemon = new Daemon("Test");
 
     expect(daemon).toBeInstanceOf(Daemon);
   });
 
   it("should be created with default data", () => {
-    const daemon = new Daemon("Test", "Daemon");
+    const daemon = new Daemon("Test");
 
     expect(daemon).toEqual(expected);
   });

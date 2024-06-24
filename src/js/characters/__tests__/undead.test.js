@@ -11,13 +11,13 @@ describe("Undead", () => {
   };
 
   it("should be created as an instance of the Undead class", () => {
-    const undead = new Undead("Test", "Undead");
+    const undead = new Undead("Test");
 
     expect(undead).toBeInstanceOf(Undead);
   });
 
   it("should be created with default data", () => {
-    const undead = new Undead("Test", "Undead");
+    const undead = new Undead("Test");
 
     expect(undead).toEqual(expected);
   });

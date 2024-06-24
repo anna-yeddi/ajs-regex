@@ -11,13 +11,13 @@ describe("Wizard", () => {
   };
 
   it("should be created as an instance of the Wizard class", () => {
-    const wizard = new Wizard("Test", "Wizard");
+    const wizard = new Wizard("Test");
 
     expect(wizard).toBeInstanceOf(Wizard);
   });
 
   it("should be created with default data", () => {
-    const wizard = new Wizard("Test", "Wizard");
+    const wizard = new Wizard("Test");
 
     expect(wizard).toEqual(expected);
   });

@@ -11,13 +11,13 @@ describe("Zombie", () => {
   };
 
   it("should be created as an instance of the Zombie class", () => {
-    const zombie = new Zombie("Test", "Zombie");
+    const zombie = new Zombie("Test");
 
     expect(zombie).toBeInstanceOf(Zombie);
   });
 
   it("should be created with default data", () => {
-    const zombie = new Zombie("Test", "Zombie");
+    const zombie = new Zombie("Test");
 
     expect(zombie).toEqual(expected);
   });
