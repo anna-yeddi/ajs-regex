@@ -1,3 +1,3 @@
-# AJS-Objects-Destructuring
+# AJS-Regex
 
-[![Build status](https://ci.appveyor.com/api/projects/status/lk44hhsubba3mntq/branch/main?svg=true)](https://ci.appveyor.com/project/anna-yeddi/ajs-destructuring/branch/main)
+[![Build status](https://ci.appveyor.com/api/projects/status/dukpad1l961w00us/branch/main?svg=true)](https://ci.appveyor.com/project/anna-yeddi/ajs-regex/branch/main)
